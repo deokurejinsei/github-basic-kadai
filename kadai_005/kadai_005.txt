@@ -1,0 +1,74 @@
+[STEP1]
+ローカルリポジトリ「git_challenge」を作成する
+
+PS C:\git\git_kadai> mkdir git_challenge
+
+
+    ディレクトリ: C:\git\git_kadai
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2024/11/04     15:34                git_challenge
+
+
+PS C:\git\git_kadai> ls
+
+
+    ディレクトリ: C:\git\git_kadai
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        2024/11/04     15:34                git_challenge
+
+
+PS C:\git\git_kadai> cd .\git_challenge\
+PS C:\git\git_kadai\git_challenge> git init
+Initialized empty Git repository in C:/git/git_kadai/git_challenge/.git/
+
+
+[STEP2]
+テキストファイル「hello_world.txt」を作成する
+
+PS C:\git\git_kadai\git_challenge> echo "Hello, world!" >> hello_world.txt
+PS C:\git\git_kadai\git_challenge> git add .\hello_world.txt
+PS C:\git\git_kadai\git_challenge> git commit -m "hello_world.txtを追加"
+[main (root-commit) 20ea6a6] hello_world.txtを追加
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello_world.txt
+PS C:\git\git_kadai\git_challenge> git status
+On branch main
+nothing to commit, working tree clean
+
+
+[STEP3]
+「hello_world.txt」に2回の変更をコミットする
+
+*** ここでWindows上のメモ帳で、2行目に　”こんにちは、世界！”　を追加 ***
+
+
+PS C:\git\git_kadai\git_challenge> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\git\git_kadai\git_challenge> git add .\hello_world.txt
+PS C:\git\git_kadai\git_challenge> git commit -m "日本語訳を追記"
+[main 5ce71c9] 日本語訳を追記
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS C:\git\git_kadai\git_challenge> git status
+On branch main
+nothing to commit, working tree clean
+
+
+[STEP4]
+「hello_world.txt」の変更履歴を表示する
+
+
+PS C:\git\git_kadai\git_challenge> git log --oneline
+5ce71c9 (HEAD -> main) 日本語訳を追記
+20ea6a6 hello_world.txtを追加
